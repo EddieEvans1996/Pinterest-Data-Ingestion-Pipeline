@@ -1,1 +1,0 @@
-# Pinterest-Data-Ingestion-Pipeline

@@ -6,7 +6,6 @@ from kafka import KafkaProducer
 
 app = FastAPI()
 
-
 class Data(BaseModel):
     category: str
     index: int
@@ -20,12 +19,10 @@ class Data(BaseModel):
     downloaded: int
     save_location: str
 
-
 @app.post("/pin/")
 def get_db_row(item: Data):
-
-    return item
-
+    data = dict(item)
+    return data
 
 if __name__ == '__main__':
     uvicorn.run("project_pin_API:app", host="localhost", port=8000)
